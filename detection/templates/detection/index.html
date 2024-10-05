@@ -1,0 +1,71 @@
+<!-- detection/templates/detection/index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Object Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="{% static 'detection/scripts.js' %}"></script>
+    <style>
+        body {
+            background-color: darkred;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        #video-container {
+            display: none;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+            background-color: rgba(52, 58, 64, 0.9);
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /
+        }
+
+        h1, h3 {
+            color: #ffffff; /* Set heading color to white */
+        }
+
+        /* Increase the video feed size */
+        #videoStream {
+            width: 100%;
+            height: auto; /*
+            max-height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h1 class="card-title">Real-Time Object Detection</h1>
+                        <div id="video-container">
+                            <h3>Live Webcam Feed</h3>
+                            <img id="videoStream" src="" class="img-fluid" />
+                        </div>
+                        <button id="openCamera" class="btn btn-success" onclick="openCamera()">Open Camera</button>
+                        <button id="closeCamera" class="btn btn-danger" onclick="closeCamera()" style="display:none;">Close Camera</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
